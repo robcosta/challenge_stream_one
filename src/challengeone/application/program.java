@@ -17,7 +17,7 @@ public class program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Entre o caminho da arquivo: ");
+		System.out.print("Entre o caminho da arquivo: ");
 		String path = sc.nextLine();
 		
 		try(BufferedReader br = new BufferedReader(new FileReader(path))){
@@ -32,7 +32,7 @@ public class program {
 				line = br.readLine();
 			}
 			
-			System.out.println("Cinco primeiras vendas de 2016 de maior preço médio");
+			System.out.println("\nCinco primeiras vendas de 2016 de maior preço médio");
 			sales.stream()
 				.filter(s -> s.getYear() == 2016)
 				.sorted((s1, s2) -> s2.averagePrice().compareTo(s1.averagePrice()))
@@ -44,7 +44,7 @@ public class program {
 					.map(s -> s.getTotal())
 					.reduce(0.0, (x,y) -> x + y);				
 			
-			System.out.println("Valor total vendido pelo vendedor Logan nos meses 1 e 7 = " + String.format("%.2f", amount));
+			System.out.println("\nValor total vendido pelo vendedor Logan nos meses 1 e 7 = " + String.format("%.2f", amount));
 
 	
 		} catch (IOException e) {
